@@ -9,7 +9,7 @@ export class PuntoEvaluacionService {
   }
 
   findAll() {
-    return `This action returns all puntoEvaluacion test if works`;
+    return `This action returns all puntoEvaluacion`;
   }
 
   findOne(id: number) {
