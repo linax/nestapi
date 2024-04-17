@@ -13,7 +13,7 @@ let PuntoEvaluacionService = class PuntoEvaluacionService {
         return 'This action adds a new puntoEvaluacion';
     }
     findAll() {
-        return `This action returns all puntoEvaluacion`;
+        return `This action returns all puntoEvaluacion test if works`;
     }
     findOne(id) {
         return `This action returns a #${id} puntoEvaluacion`;
