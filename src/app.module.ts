@@ -15,9 +15,11 @@ import { Edificacion } from './edificacion/entities/edificacion.entity';
       port: 5432,
       username: 'default',
       password: '',
-      database: 'verceldb',
+      database: 'ciudadFacil',
+      schema:'public',
       ssl: { rejectUnauthorized: true },   // Habilita SSL y rechaza certificados no autorizados (opcional)
       entities: [Edificacion],
+
 
     }),
 

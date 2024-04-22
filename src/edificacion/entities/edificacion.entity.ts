@@ -5,13 +5,18 @@ export class Edificacion{
     @PrimaryGeneratedColumn()
     edi_id: number;
 
-    @Column()
+    @Column(({ nullable: true }) )
     edi_direccion: string;
 
-    @Column()
+    @Column(({ nullable: true }) )
     edi_email: string;
 
-    @Column()
+    @Column(({ nullable: true }) )
     edi_telefono: string;
+
+    @Column()
+    edi_publico: boolean;
+
+   
 
 }

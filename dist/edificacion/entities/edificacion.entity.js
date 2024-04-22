@@ -19,17 +19,21 @@ __decorate([
     __metadata("design:type", Number)
 ], Edificacion.prototype, "edi_id", void 0);
 __decorate([
-    (0, typeorm_1.Column)(),
+    (0, typeorm_1.Column)(({ nullable: true })),
     __metadata("design:type", String)
 ], Edificacion.prototype, "edi_direccion", void 0);
 __decorate([
-    (0, typeorm_1.Column)(),
+    (0, typeorm_1.Column)(({ nullable: true })),
     __metadata("design:type", String)
 ], Edificacion.prototype, "edi_email", void 0);
 __decorate([
-    (0, typeorm_1.Column)(),
+    (0, typeorm_1.Column)(({ nullable: true })),
     __metadata("design:type", String)
 ], Edificacion.prototype, "edi_telefono", void 0);
+__decorate([
+    (0, typeorm_1.Column)(),
+    __metadata("design:type", Boolean)
+], Edificacion.prototype, "edi_publico", void 0);
 exports.Edificacion = Edificacion = __decorate([
     (0, typeorm_1.Entity)('edificacion')
 ], Edificacion);
