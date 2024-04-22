@@ -12,12 +12,25 @@ const app_controller_1 = require("./app.controller");
 const app_service_1 = require("./app.service");
 const punto_evaluacion_module_1 = require("./punto-evaluacion/punto-evaluacion.module");
 const edificacion_module_1 = require("./edificacion/edificacion.module");
+const typeorm_1 = require("@nestjs/typeorm");
+const edificacion_entity_1 = require("./edificacion/entities/edificacion.entity");
 let AppModule = class AppModule {
 };
 exports.AppModule = AppModule;
 exports.AppModule = AppModule = __decorate([
     (0, common_1.Module)({
-        imports: [punto_evaluacion_module_1.PuntoEvaluacionModule, edificacion_module_1.EdificacionModule],
+        imports: [punto_evaluacion_module_1.PuntoEvaluacionModule, edificacion_module_1.EdificacionModule,
+            typeorm_1.TypeOrmModule.forRoot({
+                type: 'postgres',
+                host: 'ep-odd-meadow-71171534.us-east-1.aws.neon.tech',
+                port: 5432,
+                username: 'default',
+                password: '4dBjz2nbrYFJ',
+                database: 'verceldb',
+                ssl: { rejectUnauthorized: true },
+                entities: [edificacion_entity_1.Edificacion],
+            }),
+        ],
         controllers: [app_controller_1.AppController],
         providers: [app_service_1.AppService],
     })
