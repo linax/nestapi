@@ -14,19 +14,20 @@ const punto_evaluacion_module_1 = require("./punto-evaluacion/punto-evaluacion.m
 const edificacion_module_1 = require("./edificacion/edificacion.module");
 const typeorm_1 = require("@nestjs/typeorm");
 const edificacion_entity_1 = require("./edificacion/entities/edificacion.entity");
+const config_1 = require("@nestjs/config");
 let AppModule = class AppModule {
 };
 exports.AppModule = AppModule;
 exports.AppModule = AppModule = __decorate([
     (0, common_1.Module)({
-        imports: [punto_evaluacion_module_1.PuntoEvaluacionModule, edificacion_module_1.EdificacionModule,
+        imports: [punto_evaluacion_module_1.PuntoEvaluacionModule, edificacion_module_1.EdificacionModule, config_1.ConfigModule.forRoot(),
             typeorm_1.TypeOrmModule.forRoot({
                 type: 'postgres',
-                host: 'ep-odd-meadow-71171534.us-east-1.aws.neon.tech',
-                port: 5432,
-                username: 'default',
-                password: '4dBjz2nbrYFJ',
-                database: 'ciudadFacil',
+                host: process.env.DB_HOST,
+                port: parseInt(process.env.DB_PORT),
+                username: process.env.DB_USERNAME,
+                password: process.env.DB_PASSWORD,
+                database: process.env.DB_DATABASE,
                 schema: 'public',
                 ssl: { rejectUnauthorized: true },
                 entities: [edificacion_entity_1.Edificacion],
