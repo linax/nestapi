@@ -1,14 +1,14 @@
 import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { PuntoEvaluacionModule } from './punto-evaluacion/punto-evaluacion.module';
-import { EdificacionModule } from './edificacion/edificacion.module';
+import { EvaluationPinModule } from './punto-evaluacion/evaluation-pin.module';
+import { BuildingModule } from './building/building.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { Edificacion } from './edificacion/entities/edificacion.entity';
+import { Building } from './building/entities/building.entity';
 import { ConfigModule } from '@nestjs/config';
 
 @Module({
-  imports: [PuntoEvaluacionModule, EdificacionModule, ConfigModule.forRoot(),
+  imports: [EvaluationPinModule, BuildingModule, ConfigModule.forRoot(),
 
       TypeOrmModule.forRoot({
         type: 'postgres',
@@ -19,7 +19,7 @@ import { ConfigModule } from '@nestjs/config';
         database: process.env.DB_DATABASE,
         schema:'public',
         ssl: { rejectUnauthorized: true },   // Habilita SSL y rechaza certificados no autorizados (opcional)
-        entities: [Edificacion],
+        entities: [Building],
 
 
       }),

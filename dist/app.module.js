@@ -10,17 +10,17 @@ exports.AppModule = void 0;
 const common_1 = require("@nestjs/common");
 const app_controller_1 = require("./app.controller");
 const app_service_1 = require("./app.service");
-const punto_evaluacion_module_1 = require("./punto-evaluacion/punto-evaluacion.module");
-const edificacion_module_1 = require("./edificacion/edificacion.module");
+const evaluation_pin_module_1 = require("./punto-evaluacion/evaluation-pin.module");
+const building_module_1 = require("./building/building.module");
 const typeorm_1 = require("@nestjs/typeorm");
-const edificacion_entity_1 = require("./edificacion/entities/edificacion.entity");
+const building_entity_1 = require("./building/entities/building.entity");
 const config_1 = require("@nestjs/config");
 let AppModule = class AppModule {
 };
 exports.AppModule = AppModule;
 exports.AppModule = AppModule = __decorate([
     (0, common_1.Module)({
-        imports: [punto_evaluacion_module_1.PuntoEvaluacionModule, edificacion_module_1.EdificacionModule, config_1.ConfigModule.forRoot(),
+        imports: [evaluation_pin_module_1.EvaluationPinModule, building_module_1.BuildingModule, config_1.ConfigModule.forRoot(),
             typeorm_1.TypeOrmModule.forRoot({
                 type: 'postgres',
                 host: process.env.DB_HOST,
@@ -30,7 +30,7 @@ exports.AppModule = AppModule = __decorate([
                 database: process.env.DB_DATABASE,
                 schema: 'public',
                 ssl: { rejectUnauthorized: true },
-                entities: [edificacion_entity_1.Edificacion],
+                entities: [building_entity_1.Building],
             }),
         ],
         controllers: [app_controller_1.AppController],
