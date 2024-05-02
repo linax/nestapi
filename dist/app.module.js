@@ -15,6 +15,7 @@ const building_module_1 = require("./building/building.module");
 const typeorm_1 = require("@nestjs/typeorm");
 const building_entity_1 = require("./building/entities/building.entity");
 const config_1 = require("@nestjs/config");
+const evaluation_pin_entity_1 = require("./evaluation-pin/entities/evaluation-pin.entity");
 let AppModule = class AppModule {
 };
 exports.AppModule = AppModule;
@@ -30,7 +31,7 @@ exports.AppModule = AppModule = __decorate([
                 database: process.env.DB_DATABASE,
                 schema: 'public',
                 ssl: { rejectUnauthorized: true },
-                entities: [building_entity_1.Building],
+                entities: [building_entity_1.Building, evaluation_pin_entity_1.EvaluationPin],
             }),
         ],
         controllers: [app_controller_1.AppController],

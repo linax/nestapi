@@ -12,11 +12,7 @@ export class EvaluationPin {
   @Column()
   type: string;
 
-  /*@ManyToOne(() => Usuario, (usuario) => usuario.puntoEvaluacion)
-  usuario: Usuario;
 
-  @ManyToOne(() => TipoPuntoEvaluacion, (tipoPuntoEvaluacion) => tipoPuntoEvaluacion.puntoEvaluacion)
-  tipoPuntoEvaluacion: TipoPuntoEvaluacion;*/
 
   @Column({ nullable: true })
   latitude: number;

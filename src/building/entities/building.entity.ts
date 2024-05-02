@@ -1,5 +1,5 @@
 import { EvaluationPin } from "src/evaluation-pin/entities/evaluation-pin.entity";
-import { Column, DeleteDateColumn, Entity, JoinColumn, OneToOne, PrimaryGeneratedColumn } from "typeorm";
+import { Column, Entity, JoinColumn, OneToOne, PrimaryGeneratedColumn } from "typeorm";
 
 @Entity('building') 
 export class Building{
@@ -19,13 +19,10 @@ export class Building{
     public: boolean;
 
 
-   /* @DeleteDateColumn()
-    deletedAt?: Date;
-
-    OneToOne(() => EvaluationPin)
+    @OneToOne(() => EvaluationPin)
     @JoinColumn()
-    evp: EvaluationPin
-   */
+    evaluationPin: EvaluationPin
+   
 
 }
 

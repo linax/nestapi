@@ -10,6 +10,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Building = void 0;
+const evaluation_pin_entity_1 = require("../../evaluation-pin/entities/evaluation-pin.entity");
 const typeorm_1 = require("typeorm");
 let Building = class Building {
 };
@@ -34,6 +35,11 @@ __decorate([
     (0, typeorm_1.Column)(),
     __metadata("design:type", Boolean)
 ], Building.prototype, "public", void 0);
+__decorate([
+    (0, typeorm_1.OneToOne)(() => evaluation_pin_entity_1.EvaluationPin),
+    (0, typeorm_1.JoinColumn)(),
+    __metadata("design:type", evaluation_pin_entity_1.EvaluationPin)
+], Building.prototype, "evaluationPin", void 0);
 exports.Building = Building = __decorate([
     (0, typeorm_1.Entity)('building')
 ], Building);
