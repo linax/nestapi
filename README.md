@@ -24,6 +24,8 @@
 
 ## Description
 
+CiudadFacil nestjs api. Ciudad Facil is an application to locate accessible places for people with dissabilities. We are migrating our old laravel api to a new nestjs api, fixing clean code issues, improving performance, adding test and others. 
+
 [Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
 
 ## Installation
