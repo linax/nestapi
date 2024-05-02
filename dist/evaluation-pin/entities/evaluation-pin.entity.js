@@ -9,44 +9,44 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.PuntoEvaluacion = void 0;
+exports.EvaluationPin = void 0;
 const typeorm_1 = require("typeorm");
-let PuntoEvaluacion = class PuntoEvaluacion {
+let EvaluationPin = class EvaluationPin {
 };
-exports.PuntoEvaluacion = PuntoEvaluacion;
+exports.EvaluationPin = EvaluationPin;
 __decorate([
     (0, typeorm_1.PrimaryGeneratedColumn)(),
     __metadata("design:type", Number)
-], PuntoEvaluacion.prototype, "pev_id", void 0);
+], EvaluationPin.prototype, "id", void 0);
 __decorate([
     (0, typeorm_1.Column)(),
     __metadata("design:type", String)
-], PuntoEvaluacion.prototype, "pev_titulo", void 0);
+], EvaluationPin.prototype, "title", void 0);
 __decorate([
     (0, typeorm_1.Column)(),
     __metadata("design:type", String)
-], PuntoEvaluacion.prototype, "pev_tipo", void 0);
+], EvaluationPin.prototype, "type", void 0);
 __decorate([
     (0, typeorm_1.Column)({ nullable: true }),
     __metadata("design:type", Number)
-], PuntoEvaluacion.prototype, "pev_latitud", void 0);
+], EvaluationPin.prototype, "latitude", void 0);
 __decorate([
     (0, typeorm_1.Column)({ nullable: true }),
     __metadata("design:type", Number)
-], PuntoEvaluacion.prototype, "pev_longitud", void 0);
+], EvaluationPin.prototype, "longitude", void 0);
 __decorate([
     (0, typeorm_1.Column)({ nullable: true }),
     __metadata("design:type", Number)
-], PuntoEvaluacion.prototype, "pev_votos_positivos", void 0);
+], EvaluationPin.prototype, "votes_up", void 0);
 __decorate([
     (0, typeorm_1.Column)({ nullable: true }),
     __metadata("design:type", Number)
-], PuntoEvaluacion.prototype, "pev_votos_negativos", void 0);
+], EvaluationPin.prototype, "votes_down", void 0);
 __decorate([
     (0, typeorm_1.Column)({ nullable: true }),
     __metadata("design:type", Number)
-], PuntoEvaluacion.prototype, "pev_evaluacion_ponderada", void 0);
-exports.PuntoEvaluacion = PuntoEvaluacion = __decorate([
-    (0, typeorm_1.Entity)('punto_evaluacion')
-], PuntoEvaluacion);
+], EvaluationPin.prototype, "weighted_evaluation", void 0);
+exports.EvaluationPin = EvaluationPin = __decorate([
+    (0, typeorm_1.Entity)('evaluation_pin')
+], EvaluationPin);
 //# sourceMappingURL=evaluation-pin.entity.js.map

@@ -17,24 +17,28 @@ exports.Building = Building;
 __decorate([
     (0, typeorm_1.PrimaryGeneratedColumn)(),
     __metadata("design:type", Number)
-], Building.prototype, "edi_id", void 0);
+], Building.prototype, "id", void 0);
 __decorate([
     (0, typeorm_1.Column)(({ nullable: true })),
     __metadata("design:type", String)
-], Building.prototype, "edi_direccion", void 0);
+], Building.prototype, "address", void 0);
 __decorate([
     (0, typeorm_1.Column)(({ nullable: true })),
     __metadata("design:type", String)
-], Building.prototype, "edi_email", void 0);
+], Building.prototype, "email", void 0);
 __decorate([
     (0, typeorm_1.Column)(({ nullable: true })),
     __metadata("design:type", String)
-], Building.prototype, "edi_telefono", void 0);
+], Building.prototype, "telephone", void 0);
 __decorate([
     (0, typeorm_1.Column)(),
     __metadata("design:type", Boolean)
-], Building.prototype, "edi_publico", void 0);
+], Building.prototype, "public", void 0);
+__decorate([
+    (0, typeorm_1.DeleteDateColumn)(),
+    __metadata("design:type", Date)
+], Building.prototype, "deletedAt", void 0);
 exports.Building = Building = __decorate([
-    (0, typeorm_1.Entity)('edificacion')
+    (0, typeorm_1.Entity)('building')
 ], Building);
 //# sourceMappingURL=building.entity.js.map

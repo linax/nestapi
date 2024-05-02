@@ -1,22 +1,31 @@
-import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
+import { EvaluationPin } from "src/evaluation-pin/entities/evaluation-pin.entity";
+import { Column, DeleteDateColumn, Entity, JoinColumn, OneToOne, PrimaryGeneratedColumn } from "typeorm";
 
-@Entity('edificacion') 
+@Entity('building') 
 export class Building{
     @PrimaryGeneratedColumn()
-    edi_id: number;
+    id: number;
 
     @Column(({ nullable: true }) )
-    edi_direccion: string;
+    address: string;
 
     @Column(({ nullable: true }) )
-    edi_email: string;
+    email: string;
 
     @Column(({ nullable: true }) )
-    edi_telefono: string;
+    telephone: string;
 
     @Column()
-    edi_publico: boolean;
+    public: boolean;
 
-   
+
+    @DeleteDateColumn()
+    deletedAt?: Date;
+
+    /*@OneToOne(() => EvaluationPin)
+    @JoinColumn()
+    evp: EvaluationPin
+   */
 
 }
+

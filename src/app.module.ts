@@ -1,7 +1,7 @@
 import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { EvaluationPinModule } from './punto-evaluacion/evaluation-pin.module';
+import { EvaluationPinModule } from './evaluation-pin/evaluation-pin.module';
 import { BuildingModule } from './building/building.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { Building } from './building/entities/building.entity';
@@ -18,7 +18,7 @@ import { ConfigModule } from '@nestjs/config';
         password:  process.env.DB_PASSWORD,
         database: process.env.DB_DATABASE,
         schema:'public',
-        ssl: { rejectUnauthorized: true },   // Habilita SSL y rechaza certificados no autorizados (opcional)
+        ssl: { rejectUnauthorized: true },   //SSL certificates
         entities: [Building],
 
 
