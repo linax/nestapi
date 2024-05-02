@@ -4,5 +4,4 @@ export declare class Building {
     email: string;
     telephone: string;
     public: boolean;
-    deletedAt?: Date;
 }

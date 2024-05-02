@@ -34,10 +34,6 @@ __decorate([
     (0, typeorm_1.Column)(),
     __metadata("design:type", Boolean)
 ], Building.prototype, "public", void 0);
-__decorate([
-    (0, typeorm_1.DeleteDateColumn)(),
-    __metadata("design:type", Date)
-], Building.prototype, "deletedAt", void 0);
 exports.Building = Building = __decorate([
     (0, typeorm_1.Entity)('building')
 ], Building);

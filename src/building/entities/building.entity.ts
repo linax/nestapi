@@ -19,10 +19,10 @@ export class Building{
     public: boolean;
 
 
-    @DeleteDateColumn()
+   /* @DeleteDateColumn()
     deletedAt?: Date;
 
-    /*@OneToOne(() => EvaluationPin)
+    OneToOne(() => EvaluationPin)
     @JoinColumn()
     evp: EvaluationPin
    */
