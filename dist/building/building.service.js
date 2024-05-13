@@ -28,6 +28,7 @@ let BuildingService = class BuildingService {
         return this.buildingRepository
             .createQueryBuilder('building')
             .leftJoinAndSelect('building.evaluationPin', 'evaluationPin')
+            .leftJoinAndSelect('evaluationPin.evaluationPinType', 'evaluationPinType')
             .getMany();
     }
     findOne(id) {

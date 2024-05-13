@@ -18,10 +18,10 @@ export class BuildingService {
   async findAll(): Promise<Building[]> {
     return  this.buildingRepository
     .createQueryBuilder('building')
-  .leftJoinAndSelect('building.evaluationPin', 'evaluationPin')
-  .getMany();
+    .leftJoinAndSelect('building.evaluationPin', 'evaluationPin')
+    .leftJoinAndSelect('evaluationPin.evaluationPinType', 'evaluationPinType')
+    .getMany();
 
-    //return building
   }
 
   findOne(id: number) {
