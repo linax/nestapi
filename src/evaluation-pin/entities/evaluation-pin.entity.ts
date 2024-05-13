@@ -1,5 +1,5 @@
-import { Building } from "src/building/entities/building.entity";
-import { Column, Entity, OneToOne, PrimaryGeneratedColumn } from "typeorm";
+import { Column, Entity, JoinColumn, OneToOne, PrimaryGeneratedColumn } from "typeorm";
+import { EvaluationPinType } from "./type.entity";
 
 @Entity('evaluation_pin')
 export class EvaluationPin {
@@ -9,8 +9,6 @@ export class EvaluationPin {
   @Column()
   title: string;
 
-  @Column()
-  ept_id: string;
 
   @Column({ nullable: true })
   latitude: number;
@@ -29,5 +27,7 @@ export class EvaluationPin {
   weighted_evaluation: number;
 
 
-
+  @OneToOne(() => EvaluationPinType)
+  @JoinColumn()
+  evaluationPinType: EvaluationPinType;
 }

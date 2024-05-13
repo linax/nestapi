@@ -7,6 +7,9 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { Building } from './building/entities/building.entity';
 import { ConfigModule } from '@nestjs/config';
 import { EvaluationPin } from './evaluation-pin/entities/evaluation-pin.entity';
+import { EvaluationPinType } from './evaluation-pin/entities/type.entity';
+
+
 
 @Module({
   imports: [EvaluationPinModule, BuildingModule, ConfigModule.forRoot(),
@@ -20,7 +23,7 @@ import { EvaluationPin } from './evaluation-pin/entities/evaluation-pin.entity';
         database: process.env.DB_DATABASE,
         schema:'public',
         ssl: { rejectUnauthorized: true },   //SSL certificates
-        entities: [Building, EvaluationPin],
+        entities: [Building, EvaluationPin, EvaluationPinType],
 
 
       }),

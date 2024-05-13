@@ -11,6 +11,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.EvaluationPin = void 0;
 const typeorm_1 = require("typeorm");
+const type_entity_1 = require("./type.entity");
 let EvaluationPin = class EvaluationPin {
 };
 exports.EvaluationPin = EvaluationPin;
@@ -22,10 +23,6 @@ __decorate([
     (0, typeorm_1.Column)(),
     __metadata("design:type", String)
 ], EvaluationPin.prototype, "title", void 0);
-__decorate([
-    (0, typeorm_1.Column)(),
-    __metadata("design:type", String)
-], EvaluationPin.prototype, "ept_id", void 0);
 __decorate([
     (0, typeorm_1.Column)({ nullable: true }),
     __metadata("design:type", Number)
@@ -46,6 +43,11 @@ __decorate([
     (0, typeorm_1.Column)({ nullable: true }),
     __metadata("design:type", Number)
 ], EvaluationPin.prototype, "weighted_evaluation", void 0);
+__decorate([
+    (0, typeorm_1.OneToOne)(() => type_entity_1.EvaluationPinType),
+    (0, typeorm_1.JoinColumn)(),
+    __metadata("design:type", type_entity_1.EvaluationPinType)
+], EvaluationPin.prototype, "evaluationPinType", void 0);
 exports.EvaluationPin = EvaluationPin = __decorate([
     (0, typeorm_1.Entity)('evaluation_pin')
 ], EvaluationPin);
