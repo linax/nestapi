@@ -1,7 +1,7 @@
 export declare class EvaluationPin {
     id: number;
     title: string;
-    type: string;
+    tpe_id: string;
     latitude: number;
     longitude: number;
     votes_up: number;

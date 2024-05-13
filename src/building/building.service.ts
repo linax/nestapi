@@ -9,14 +9,19 @@ import { Repository } from 'typeorm';
 export class BuildingService {
   constructor(
     @InjectRepository(Building)
-    private edificacionRepository: Repository<Building>,
+    private buildingRepository: Repository<Building>,
   ) {}
   create(createEdificacionDto: CreateEdificacionDto) {
     return 'This action adds a new edificacion';
   }
 
   async findAll(): Promise<Building[]> {
-    return this.edificacionRepository.find();
+    return  this.buildingRepository
+    .createQueryBuilder('building')
+  .leftJoinAndSelect('building.evaluationPin', 'evaluationPin')
+  .getMany();
+
+    //return building
   }
 
   findOne(id: number) {

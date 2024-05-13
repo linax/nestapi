@@ -10,9 +10,7 @@ export class EvaluationPin {
   title: string;
 
   @Column()
-  type: string;
-
-
+  tpe_id: string;
 
   @Column({ nullable: true })
   latitude: number;

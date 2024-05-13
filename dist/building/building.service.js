@@ -18,14 +18,17 @@ const typeorm_1 = require("@nestjs/typeorm");
 const building_entity_1 = require("./entities/building.entity");
 const typeorm_2 = require("typeorm");
 let BuildingService = class BuildingService {
-    constructor(edificacionRepository) {
-        this.edificacionRepository = edificacionRepository;
+    constructor(buildingRepository) {
+        this.buildingRepository = buildingRepository;
     }
     create(createEdificacionDto) {
         return 'This action adds a new edificacion';
     }
     async findAll() {
-        return this.edificacionRepository.find();
+        return this.buildingRepository
+            .createQueryBuilder('building')
+            .leftJoinAndSelect('building.evaluationPin', 'evaluationPin')
+            .getMany();
     }
     findOne(id) {
         return `This action returns a #${id} edificacion`;
