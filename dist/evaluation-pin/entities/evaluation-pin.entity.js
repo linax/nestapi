@@ -24,11 +24,11 @@ __decorate([
     __metadata("design:type", String)
 ], EvaluationPin.prototype, "title", void 0);
 __decorate([
-    (0, typeorm_1.Column)({ nullable: true }),
+    (0, typeorm_1.Column)({ type: 'decimal', precision: 10, scale: 8 }),
     __metadata("design:type", Number)
 ], EvaluationPin.prototype, "latitude", void 0);
 __decorate([
-    (0, typeorm_1.Column)({ nullable: true }),
+    (0, typeorm_1.Column)({ type: 'decimal', precision: 10, scale: 8 }),
     __metadata("design:type", Number)
 ], EvaluationPin.prototype, "longitude", void 0);
 __decorate([

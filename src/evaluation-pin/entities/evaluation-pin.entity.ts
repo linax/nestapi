@@ -10,10 +10,10 @@ export class EvaluationPin {
   title: string;
 
 
-  @Column({ nullable: true })
+  @Column({ type: 'decimal', precision: 10, scale: 8 })
   latitude: number;
 
-  @Column({ nullable: true })
+  @Column({ type: 'decimal', precision: 10, scale: 8 })
   longitude: number;
 
 
