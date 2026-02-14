@@ -1,60 +1,39 @@
-<p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="200" alt="Nest Logo" /></a>
-</p>
+# Geo-Accessibility Core Service (API) 🌍♿️
 
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
+![NestJS](https://img.shields.io/badge/nestjs-%23E0234E.svg?style=for-the-badge&logo=nestjs&logoColor=white)
+![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white)
+![Vercel](https://img.shields.io/badge/vercel-%23000000.svg?style=for-the-badge&logo=vercel&logoColor=white)
+![PostgreSQL](https://img.shields.io/badge/postgres-%23316192.svg?style=for-the-badge&logo=postgresql&logoColor=white)
 
+> **Modern backend for the Ciudad Fácil app platform.**
+> This service manages the geolocation of accessible places, enabling users with disabilities to find safe routes and navigate their city with confidence.
 
+---
 
-## Description
+## 🏗️ Architectural Decision: From Monolith to Microservice
 
-CiudadFacil nestjs api. Ciudad Facil is an application to locate accessible places for people with dissabilities. We are migrating our old laravel api to a new nestjs api, fixing clean code issues, improving performance, adding test and others. 
+This project represents a **complete technical modernization**, migrating a legacy monolithic architecture (Laravel/PHP) to a scalable system based on **Node.js and NestJS**.
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+**Migration Goals:**
+* **Performance:** Reduced latency for geospatial queries.
+* **Type Safety:** Adoption of TypeScript to minimize runtime errors.
+* **Maintainability:** Modular architecture (Clean Architecture principles) to facilitate rapid feature development.
 
-## Installation
+## 🛠️ Tech Stack & Patterns
 
-```bash
-$ npm install
-```
+* **Framework:** NestJS (Express adapter).
+* **Database:** PostgreSQL with TypeORM.
+* **Auth:** JWT Strategy & Guards.
+* **API Pattern:** RESTful with validated DTOs (class-validator).
+* **Deployment:** Serverless function on Vercel.
 
-## Running the app
+## 📂 Module Structure
 
-```bash
-# development
-$ npm run start
+The system is decoupled into functional domains:
 
-# watch mode
-$ npm run start:dev
-
-# production mode
-$ npm run start:prod
-```
-
-## Test
-
-```bash
-# unit tests
-$ npm run test
-
-# e2e tests
-$ npm run test:e2e
-
-# test coverage
-$ npm run test:cov
-```
-
-## Support
-
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
-
-## Stay in touch
-
-- Author - [Carolina Lagos](https://www.linkedin.com/in/clagosv/)
-- Website - [https://ciudadfacil.cl](https://ciudadfacil.cl/)
-- Twitter - [@ciudadFacil](https://twitter.com/ciudadFacil)
-
-## License
-
-Nest is [MIT licensed](LICENSE).
+```text
+src/
+├── auth/          # Authentication & JWT Strategies
+├── places/        # Geospatial logic & POI management
+├── users/         # Profile & Role management
+└── common/        # Global Decorators, Exception Filters & Pipes
